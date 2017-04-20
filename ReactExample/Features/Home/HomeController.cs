@@ -15,5 +15,10 @@ namespace ReactExample.Features.Home
         {
             return View();
         }
+
+        public IActionResult Quiz()
+        {
+            return View();
+        }
     }
 }

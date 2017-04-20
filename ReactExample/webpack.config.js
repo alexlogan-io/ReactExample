@@ -10,7 +10,8 @@ module.exports = (env) => {
         stats: { modules: false },
         // Here the application starts executing and webpack starts bundling
         entry: {
-            'react': './Client/jsx/app.jsx'
+            'app': './Client/jsx/app.jsx',
+            'quiz': './Client/jsx/quiz.jsx'
         },
         // options for resolving module requests
         resolve: { extensions: ['.js', '.jsx'] },
@@ -33,7 +34,7 @@ module.exports = (env) => {
         },
         // list of additional plugins
         plugins: [
-            new ExtractTextPlugin('site.css'),
+            new ExtractTextPlugin('[name].css'),
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
